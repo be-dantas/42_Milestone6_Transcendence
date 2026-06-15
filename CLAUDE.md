@@ -21,6 +21,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Sempre que finalizar uma tarefa**, rode: `git add .` → `git commit` → `git push` na branch **`BIA`** (criar/trocar para ela se não estiver nela; push para `origin BIA`).
 - Mensagens no padrão **Conventional Commits**: `tipo(escopo opcional): descrição` — ex.: `feat:`, `fix:`, `docs:`, `chore:`, `refactor:`, `test:`, `style:`, `perf:`, `build:`, `ci:`.
 - **NÃO** incluir nenhuma menção de que o Claude/Claude Code fez o commit (sem `Co-Authored-By`, sem "Generated with Claude" etc.). Commits saem como `be-dantas`.
+- **Sempre que fizer alterações significativas no projeto, documente brevemente as mudanças em `docs/dev_journal.md`** (entrada mais recente no topo, com data).
 
 ## Específico deste projeto
 
