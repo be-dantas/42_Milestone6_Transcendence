@@ -26,35 +26,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Específico deste projeto
 
 - **Este NÃO é um projeto da norma norminette.** Esqueça norminette/header 42 aqui — vale o padrão de código do framework escolhido (lint/format de TS/NestJS).
-- **`docs/` é a fonte da verdade.** Sempre que houver dúvida sobre o que fazer ou se algo é permitido, consulte:
-  - `docs/subject_pt.md` / `docs/subject_en.md` — **as regras** (requisitos obrigatórios + módulos). Leia antes de propor arquitetura ou novas features.
-  - `docs/avaliacao_pt.md` / `docs/avaliacao_en.md` — **o que os avaliadores checam** na defesa. Use como checklist do que NÃO pode falhar.
+- **A regra oficial do projeto é o `docs/subject_pt.md` / `docs/subject_en.md`** (versão nova: aplicação web livre, 14 pontos, módulos). Sempre que houver dúvida sobre o que fazer ou se algo é permitido, consulte o subject.
+- **⚠️ `docs/avaliacao_pt.md` / `docs/avaliacao_en.md` estão OBSOLETOS** — são o template antigo do Transcendence (Pong, OAuth 42, 2FA, canais de chat) e **não valem** como regra. Não use para decidir requisitos. Mantidos só por referência histórica.
 
 ## Estado atual
 
 - **Só documentação — ainda sem código.** Há `docs/` e um `README.md` de uma linha. Quando o código começar, atualize a seção "Comandos" abaixo com os comandos reais de build/lint/test do framework escolhido.
 
-## Stack obrigatória (definida pelos avaliadores)
+## Stack escolhida pelo time
 
-`docs/avaliacao_pt.md` fixa a stack — não é livre como o subject sugere:
+Pelo subject a stack é **livre** (basta um framework no front e um no back + um banco). O time escolheu:
 
-- **Backend: NestJS** (framework TypeScript).
+- **Backend: NestJS** (framework TypeScript) + **Prisma** (ORM).
 - **Banco: PostgreSQL.**
-- **Frontend: um framework TypeScript** (React, Vue, Angular, Svelte etc. — biblioteca JS/TS qualquer é permitida).
-- **Deploy: Docker Compose na raiz do repo, subindo com um único comando.**
+- **Frontend: React + Vite + TypeScript + Tailwind.**
+- **Deploy: Docker Compose na raiz do repo, subindo com um único comando** (exigência do subject: conteinerização rodando com 1 comando).
+
+Detalhes de arquitetura, schema e backlog em `docs/plano_agil.md`.
 
 ## Comandos
 
-- **Subir tudo (oficial da avaliação):** `docker-compose up --build` — o `docker-compose.yml` **deve** ficar na raiz do repositório.
+- **Subir tudo:** `docker-compose up --build` — o `docker-compose.yml` **deve** ficar na raiz do repositório.
 - Build / lint / testes por serviço (frontend, backend): **a definir quando a stack for scaffoldada.** Preencher aqui assim que existir `package.json`/scripts (ex.: `npm run lint`, `npm test`, rodar um teste único com `npm test -- <arquivo>`).
 
 ## Requisitos obrigatórios que NÃO podem falhar (checklist de defesa)
 
-Tirados do subject + avaliacao. Qualquer um destes quebrado pode zerar/rejeitar o projeto:
+Tirados do subject. Qualquer um destes quebrado pode zerar/rejeitar o projeto:
 
 - **Console do navegador limpo:** zero erros ou warnings não tratados, em toda a navegação.
 - **HTTPS em todo o backend.**
-- **Validação/sanitização de TODA entrada de usuário no front E no back** (server-side é checado explicitamente — sem isso a avaliação para).
+- **Validação/sanitização de TODA entrada de usuário no front E no back** (o subject exige validação nas duas pontas).
 - **Senhas com hash + salt** no banco. Sem credenciais/API keys no Git — tudo em `.env` (gitignored) com um `.env.example` versionado.
 - **SPA:** botões Voltar/Avançar do navegador devem funcionar.
 - **Multiusuário simultâneo** sem corrupção de dados nem race conditions; atualizações em tempo real refletidas para todos quando aplicável.

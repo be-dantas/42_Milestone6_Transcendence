@@ -6,6 +6,13 @@ Formato: `## AAAA-MM-DD — título curto` seguido de bullets do que mudou e por
 
 ---
 
+## 2026-06-15 — `subject` definido como regra oficial
+
+- Decisão: **`subject_*.md` é a regra do projeto**; `avaliacao_*.md` está obsoleto (template antigo do Pong) e não vale como requisito. Resolve a pendência bloqueante.
+- `CLAUDE.md` atualizado: stack deixa de ser "obrigatória pelos avaliadores" e passa a ser "escolhida pelo time" (NestJS + Prisma + PostgreSQL + React/Vite/Tailwind).
+
+---
+
 ## 2026-06-15 — Definição do produto e plano ágil
 
 - Produto escolhido: **rede social de avaliação de pessoas e empresas** (notas 0–10, feed, DM, busca, estabelecimentos com preferências de cliente).
