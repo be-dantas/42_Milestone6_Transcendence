@@ -6,6 +6,15 @@ Formato: `## AAAA-MM-DD — título curto` seguido de bullets do que mudou e por
 
 ---
 
+## 2026-06-15 — Definição do produto e plano ágil
+
+- Produto escolhido: **rede social de avaliação de pessoas e empresas** (notas 0–10, feed, DM, busca, estabelecimentos com preferências de cliente).
+- Combinação de **15 pontos** definida (login só email+senha; empresas como módulo Organizações; GDPR/LGPD).
+- Criado `docs/plano_agil.md` com stack, schema resumido e backlog Epic → Feature → Story → Task.
+- Pendência bloqueante registrada: confirmar com o staff se vale `subject` novo ou `avaliacao` antigo.
+
+---
+
 ## 2026-06-15 — Setup inicial da documentação
 
 - Criado o `CLAUDE.md` local com preferências, stack obrigatória (NestJS + PostgreSQL + frontend TS), checklist de requisitos de defesa, módulos e workflow de git.
